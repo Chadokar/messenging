@@ -23,7 +23,7 @@
     "web-vitals": "^3.5.0"
   },
   "scripts": {
-    "start": "react-scripts start --host firststatic.onrender.com --port 443",
+    "start": "react-scripts start --host https://firststatic.onrender.com --port 443",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
