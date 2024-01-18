@@ -15,6 +15,7 @@ function Groupchat({ socket }) {
   const [groupName, setGroupName] = useState("");
   // constain the current group data showing on screen
   const group = useSelector((state) => state.GroupManager?.group);
+  console.log(group);
 
   useEffect(() => {
     setCurrentSocket(socket);
@@ -64,8 +65,10 @@ function Groupchat({ socket }) {
           authorization: `Bearer` + " " + localStorage.getItem("userToken"),
         },
       };
-      const { data } = await axios.get(`group/${id}`, config);
-      dispatch(setGroup(data));
+      console.log(id);
+      const data = await axios.get(`group/${id}`, config);
+      console.log(data);
+      dispatch(setGroup(data.data));
     } catch (err) {
       console.log(err);
     }

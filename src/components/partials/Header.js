@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
+import { useSelector } from "react-redux";
 
 function Header() {
   const token = localStorage.getItem("userToken");
@@ -10,11 +11,13 @@ function Header() {
     document.location.reload();
   };
 
+  const userData = useSelector((state) => state.UserReducers);
+
   return (
     <>
       <nav className="main">
         <h1 className="name">
-          <a href="/">Shubham Chadokar</a>
+          <a href="/">{userData?.name || "Shubham Chadokar"}</a>
         </h1>
         <ul className="nav-right">
           {token && (

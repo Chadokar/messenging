@@ -8,6 +8,7 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -25,6 +26,7 @@ function Signup() {
           name,
           email,
           password,
+          contact,
         },
         config
       );
@@ -48,6 +50,14 @@ function Signup() {
           name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <label htmlFor="contact">Contact</label>
+        <input
+          type="text"
+          name="contact"
+          value={contact}
+          onChange={(e) => setContact(e.target.value)}
           required
         />
         <div className="email error"></div>

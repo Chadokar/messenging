@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Members from "./afterauth/Members";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
@@ -113,6 +113,8 @@ function Navigation() {
               <Route key={i} element={ele.element} path={ele.path} />
             ))}
         </Route>
+        {/* here I want to set If the path not as mensioned above the navigate the page to  "/"*/}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
   );

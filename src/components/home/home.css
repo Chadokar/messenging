@@ -5,7 +5,7 @@ body {
   /* margin: 20px 40px; */
   font-size: 1.2rem;
   letter-spacing: 1px;
-  background: #fafafa;
+  background: #f1f1fa;
 }
 h1,
 h2,
@@ -143,16 +143,19 @@ header .btn {
   cursor: pointer;
 }
 .recipe {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   border-radius: 20px;
   background: white;
   position: relative;
   text-align: center;
-  padding: 0 20px 30px 20px;
+  align-items: center;
+  padding: 30px 20px;
 }
 .recipe img {
   width: 100px;
-  margin: -30px auto 20px;
+  /* margin: -30px auto 20px; */
 }
 .footer {
   text-align: center;
@@ -163,6 +166,7 @@ header .btn {
 .standard {
   display: flex;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
 .standard h2 {
